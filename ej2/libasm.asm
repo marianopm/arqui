@@ -1,5 +1,6 @@
 GLOBAL print
 GLOBAL exit
+GLOBAL uppercase
 
 section .text
 
@@ -42,3 +43,26 @@ strlen:
     pop ebx
     pop ecx
     ret
+    
+uppercase:
+        push ebx
+        push eax
+    .loop:
+        mov al, [ebx]
+        test al, al
+        jz .fin
+
+        cmp al, 97
+        jl .next
+        cmp al, 122
+        jg .next
+        sub al, 32
+        mov [ebx], al
+        
+    .next:
+        inc ebx
+        jmp .loop
+    .fin:
+        pop eax
+        pop ebx
+        ret

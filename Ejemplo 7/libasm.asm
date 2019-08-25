@@ -81,7 +81,7 @@ numtostr:
 	MOV ECX,10
 	MOV EDX,0   ; Pongo en cero la parte mas significativa
 	Mov EAX, dword[EBp +4]  ;Cargo el numero a convertir
-	MOV EBX,dword[ebp +8]
+	MOV EBX,dword[ebp +8]	;donde deberia dejar el resultado
 	ADD EBX,9               ; me posiciono al final del string para empezar a colocar
 	mov byte [ebx], 0       ; los caracteres ASCII de derecha a izquierda comenzando con cero
 	dec ebx                 ; binario

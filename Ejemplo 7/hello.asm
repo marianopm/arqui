@@ -22,7 +22,7 @@ _start:
 
 	push eax;
 	
-        mov dword [bebp] ,ebp  ; guardo ebp
+    mov dword [bebp] ,ebp  ; guardo ebp
 	call numtostr          ; funcion de conversion de entero a ASCII
 			; devuelve en el stack el puntero al string del numero en ASCII
 	mov ebp, dword [bebp]

@@ -1,19 +1,21 @@
+section .text
 GLOBAL _start
+
 EXTERN print 
 EXTERN exit
-section .text:
+EXTERN uppercase
+
 _start:
     mov ebx, cadena
+    call print
+    call uppercase
     call print
 
     mov ebx, 0
     call exit
 
-section .data:
+section .data
 cadena db "h4ppy c0d1ng",10,0
-
-section .bss
-placeholder resb 10
 
 ; la idea es que hagas un uppercase comparando con el ascii de a a z
 ; y ahi compares, si no es sigue, si es lo pasas a mayuscula con la diferencia entre A y a
