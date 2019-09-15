@@ -28,6 +28,7 @@ strlen:
     push ebx ;guardo en stack c, b y flags para que cuando termine la func
     pushf    ;se vean desafectados
 
+    mov ebx, [ebp + 8]
     mov ecx, 0 ;aca pego salvataje por si no es ninguna cadena
     .loop:
     mov al, [ebx] 
